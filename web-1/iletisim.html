@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GİRİŞ</title>
+  <link rel="stylesheet" href="stillerim.css">
+  <script>
+ function kontrol1(forum)
+ {
+ var ad = forum.ad.value;
+ var soyad= forum.soyad.value;
+ var yorum=forum.yorum.value;
+ var email= forum.email.value;
+   var atpos=email.indexOf("@");
+    var dotpos=email.lastIndexOf(".");
+if ( ad==null || ad==""  )
+    {
+        alert("Kullanıcı adını boş bırakmayın...");
+        return false;
+    }
+    if ( soyad == null || soyad == "" )
+    {
+        alert("Soyad kısmını boş bırakmayın");
+        return false;     
+    }
+	 if ( yorum == null || yorum == "" )
+    {
+        alert("Yorum kısmını boş bırakmayın");
+        return false;     
+    }
+	
+    
+	if(email==null || email=="")
+	  {
+	
+	    alert("E-mail alanı boş bırakılmaz");
+		return false;
+	
+	}
+    if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length )
+    {
+        alert("Geçerli email adresi girin");
+        return false;
+    }      
+    return true;
+ 
+ }
+ 
+ 
+ 
+ 
+ </script>
+
+ </head>
+ <body style="background-color:#c6e2ff">
+
+<form action="gonder.php"  onsubmit="return kontrol1(this)"  method="post">
+<table width="500" border="0"  font face="Thoma" size="2" align="center" cellpadding="20" cellspacing="20">
+<tr>
+<th colspan="2" scope="col" style="text-align:center;font-size:18pt"> Site İletişim Formu </th>
+</tr>
+<tr>
+<td>
+
+ADINIZ : <input type="text" name="ad"><br>
+SOYADINIZ : <input type="text" name="soyad"><br>
+E-MAİL : <input type="text" name="E-mail"><br>
+YORUM :<br> <textarea cols="45" rows="10" name="yorum" ></textarea><br>
+
+<br>
+<br>
+
+
+<input type="submit" value="GÖNDER"> <input type="reset" value="TEMİZLE">
+
+</td>
+</tr>
+</table>
+</form>
+
+ </body>
+</html>
+
+
+
+
+
+

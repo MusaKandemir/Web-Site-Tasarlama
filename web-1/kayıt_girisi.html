@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GİRİŞ</title>
+  <link rel="stylesheet" href="stillerim.css">
+ </head>
+ <body style="background-color:#c6e2ff">
+ <div style="height:100px" > &nbsp</div>
+ <script>
+ function kontrol(forum)
+ {
+ var ad = forum.ad.value;
+ var sifre= forum.sifre.value;
+ var sifre1=forum.sifre1.value;
+ var email= forum.email.value;
+   var atpos=email.indexOf("@");
+    var dotpos=email.lastIndexOf(".");
+if ( ad==null || ad==""  )
+    {
+        alert("Kullanıcı adını boş bırakmayın...");
+        return false;
+    }
+    if ( sifre == null || sifre == "" || sifre1 == null || sifre1 == "")
+    {
+        alert("Şifreyi boş bırakmayın");
+        return false;
+    }
+    if ( !(sifre == sifre1) )
+    {
+        alert("Şifreler eşleşmiyor");
+        return false;
+    }     
+	if(email==null || email=="")
+	  {
+	
+	    alert("E-mail alanı boş bırakılmaz");
+		return false;
+	
+	}
+    if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length )
+    {
+        alert("Geçerli email adresi girin");
+        return false;
+    }      
+    return true;
+ 
+ }
+ 
+ 
+ 
+ 
+ </script>
+ <div style="color:black; font-size:30pt;text-align:center">  <strong> KAYIT OLMA ALANI </strong> </div>
+  <div class="container">
+   <img src="resim/kk.jpeg"/>
+   
+   
+   <form name="uye_formu" action="index1.html" onsubmit="return kontrol(this)" method="post">
+   <div class="form-input">
+   <input type="text" name="ad" placeholder="Kullanıcı Adı">
+   </div>
+   <div class="form-input">
+   <input type="password" name="sifre" placeholder="Şifreniz">
+   </div>
+    <div class="form-input">
+   <input type="password" name="sifre1" placeholder="Tekrar Şifreniz">
+   </div>
+    <div class="form-input">
+   <input type="text" name="email" placeholder="E-mail">
+   </div>
+  
+   <input type ="submit" name="gonder" value="Gönder" class="btn-kayit"> <br>
+   
+   
+   
+   <button  type="button" class="btn-kayit" style="height:48px;padding:8px;border:0;width:80px"> <a href="kg.html"> Üye Girişi </a></button>
+
+  
+
+   </form>
+  
+  </div>
+
+ </body>
+</html>
+
+
+
+
+
+

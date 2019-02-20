@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GİRİŞ</title>
+  <link rel="stylesheet" href="stillerim.css">
+  <script>
+ function kontrol2(forum1)
+ {
+ var kullaniciadi = forum1.kullaniciadi.value;
+ var sifre= forum1.sifre.value;
+
+if ( kullaniciadi==null || kullaniciadi==""  )
+    {
+        alert("Kullanıcı adını boş bırakmayın...");
+        return false;
+    }
+    if ( sifre == null || sifre == "" )
+    {
+        alert("Şifreyi boş bırakmayın");
+        return false;
+    }
+ 
+ return true;
+ }
+ 
+ </script>
+ </head>
+ <body style="background-color:#c6e2ff">
+ <div style="height:40px"> &nbsp </div>
+ <div style="font-size:30pt; color:black; text-align:center">
+ <strong> KULLANICI GİRİŞ EKRANI  </strong></div>
+
+
+ <div class="container" style="height:400px">
+   <img src="resim/kk.jpeg"/>
+    <form name="uye_formu" action="index1.html" onsubmit="return kontrol2(this)" method="post">
+    <div class="form-input">
+   <input type="text" name="kullaniciadi" placeholder="Kullanıcı Adı">
+   </div>
+   
+   <div class="form-input">
+   <input type="password" name="sifre" placeholder="Şifreniz">
+   </div>
+   
+    <input type="submit" name="submit"  value="Gönder"  class="btn-giris"><br/>
+	
+   
+   
+     </form>
+  </div>
+
+ </body>
+</html>
+
+
+
+
+
+
